@@ -7,6 +7,21 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  items: any;
+  constructor() {
+    this.items = [
+      {title: 'test', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 1', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 2', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 3', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+      {title: 'test 4', image: '../assets/imgs/road-sign-361513_960_720.jpg'},
+    ];
+  }
 
 }

@@ -10,18 +10,43 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-icon [name]="item.icon" slot="start"></ion-icon>
-      {{item.title}}
-      <div class="item-note" slot="end">
+  <ion-card   *ngFor="let item of items" (click)="itemTapped($event, item)">
+    <ion-card-header >
+      <ion-item  lines="none" class="ion-no-margin ion-no-padding">
+        <ion-item class="ion-no-margin ion-no-padding-start">
+          <ion-avatar slot="start">
+            <img [src]="item.icon" />
+          </ion-avatar>
+        </ion-item>
+        <ion-label>{{item.title}}</ion-label>
+      </ion-item>
+      <div  class="item-note ion-text-end">
         {{item.note}}
       </div>
-    </ion-item>
-  </ion-list>
-  <!--
-    <div *ngIf="selectedItem" padding>
-      You navigated here from <b>{{selectedItem.title }}</b>
-    </div>
-  -->
+    </ion-card-header>
+    <ion-card-content color="primary"  class=" ion-no-padding" [hidden]="!item.showDetails">
+      <div > 
+        sdas
+      </div>
+      <ion-grid  class="ion-no-padding jolly-card-content">
+        <ion-row color="primary" class="ion-padding">
+            <ion-col size="4" class="ion-text-center">
+                <ion-button  (click)="itemDetailsTapped($event, item)">
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
+                  </ion-button>
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+                <ion-button  (click)="itemDetailsTapped($event, item)">
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
+                  </ion-button>
+            </ion-col>
+            <ion-col size="4" class="ion-text-center">
+                <ion-button  (click)="itemDetailsTapped($event, item)">
+                    <ion-icon slot="icon-only" name="add"></ion-icon>
+                  </ion-button>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

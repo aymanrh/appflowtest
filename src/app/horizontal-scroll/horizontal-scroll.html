@@ -1,0 +1,10 @@
+<div scrollX="true" class="ion-margin-vertical ion-padding-end ion-margin-end">
+  <div class="match-item ion-margin-start" *ngFor="let item of items">
+    <div *ngFor="let item of list"></div>
+    <ion-avatar slot="start">
+        <img src="{{item.image}}">
+    </ion-avatar>
+    <p class="ion-text-center">{{item.title}}</p>
+  </div>
+</div>
+      

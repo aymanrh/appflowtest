@@ -1,26 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
+
+
 
 @Component({
-  selector: 'app-list',
+  selector: 'page-list',
   templateUrl: 'list.page.html',
   styleUrls: ['list.page.scss']
 })
-export class ListPage implements OnInit {
-  private selectedItem: any;
-  private icons = [
-    'flask',
-    'wifi',
-    'beer',
-    'football',
-    'basketball',
-    'paper-plane',
-    'american-football',
-    'boat',
-    'bluetooth',
-    'build'
-  ];
-  public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
+export class ListPage {
+
+  icons: string[];
+  items: Array<{title: string, note: string, icon: string, showDetails?: boolean}>;
+  showDetails = false;
+  constructor(public navCtrl: NavController) {
+    this.icons = ['../assets/imgs/road-sign-361513_960_720.jpg', 'wifi', 'beer', 'football', 'basketball', 'paper-plane',
+    'american-football', 'boat', 'bluetooth', 'build'];
+
+    this.items = [];
     for (let i = 1; i < 11; i++) {
       this.items.push({
         title: 'Item ' + i,
@@ -30,10 +27,16 @@ export class ListPage implements OnInit {
     }
   }
 
-  ngOnInit() {
+  itemTapped(event, item) {
+    item.showDetails=!item.showDetails;
+    this.items.forEach(i => {
+      if (i.title !== item.title) {
+          i.showDetails = false;
+      }
+    });  
   }
-  // add back when alpha.4 is out
-  // navigate(item) {
-  //   this.router.navigate(['/list', JSON.stringify(item)]);
-  // }
+
+  itemDetailsTapped(event, item){
+    this.navCtrl.navigateForward(['/details', item.title], {state: {data: item}});
+  }
 }
