@@ -10,5 +10,21 @@
 </ion-header>
 
 <ion-content>
-  <horizontal-scroll [items]="items"></horizontal-scroll>
+<ion-grid class="ion-padding-vertical">
+  <ion-row>
+    <ion-col size="12">
+        <horizontal-scroll [items]="items"></horizontal-scroll>
+    </ion-col>
+    
+  </ion-row>
+  <ion-row>
+      <ion-col size="12">
+          <horizontal-scroll [items]="items"></horizontal-scroll>
+      </ion-col>
+  </ion-row>
+</ion-grid>
+  <!-- <horizontal-scroll [items]="items"></horizontal-scroll>
+  <button ion-button (click)="takePhotoAndShowCrop()">Take Photo & Crop</button>
+  <button ion-button (click)="showCrop()">Crop</button>
+  <img [src]="src"/> -->
 </ion-content>

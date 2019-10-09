@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+
 @Component({
   selector: 'app-details',
   templateUrl: './details.page.html',
@@ -16,6 +17,9 @@ export class DetailsPage implements OnInit {
     this.route.params.subscribe(params => {
       console.log(params.title);
     })
+
+    
   }
+
 
 }
